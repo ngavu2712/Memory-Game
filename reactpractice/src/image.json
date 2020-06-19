@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "image" : "https://images.app.goo.gl/xCZNkeLiTzVhb99e6",
+        "alt" : "Nibbler"
+    },
+    {
+        "id": 2,
+        "image" : "https://images.app.goo.gl/EjziQhLXUf8u969D6",
+        "alt" : "Fry"
+    },
+    {
+        "id": 3,
+        "image" : "https://images.app.goo.gl/B9x1hhgWSqJRy2CPA",
+        "alt" : "Dr.Zoiberg"
+    },
+    {
+        "id": 4,
+        "image" : "https://images.app.goo.gl/q8etw22ZWKun3Cp29",
+        "alt" : "Professor Farnsworth"
+    },
+    {
+        "id": 5,
+        "image" : "https://images.app.goo.gl/e7YB8tYZiiEK8LM7A",
+        "alt" : "Leela"
+    },
+    {
+        "id": 6,
+        "image" : "https://images.app.goo.gl/EwuAAWFwhhz2w2cm6",
+        "alt" : "Amy Wong"
+    },
+    {
+        "id": 7,
+        "image" : "https://images.app.goo.gl/KKy1X3R8Trrj1sTp8",
+        "alt" : "Bender"
+    },
+    {
+        "id": 8,
+        "image" : "https://images.app.goo.gl/urzUxwNpHiWKd8r9A",
+        "alt" : "Mom"
+    },
+    {
+        "id": 9,
+        "image" : "https://images.app.goo.gl/dLezaD4YRhDwGufo9",
+        "alt" : "Hermes"
+    },
+    {
+        "id": 10,
+        "image" : "https://images.app.goo.gl/EzTk9ZeDs8SkSxBq7",
+        "alt" : "Zapp Brannigan"
+    },
+    {
+        "id": 11,
+        "image" : "https://images.app.goo.gl/Rs69i1rG1h5xwYJt9",
+        "alt" : "Kif Kroker"
+    },
+    {
+        "id": 12,
+        "image" : "https://images.app.goo.gl/Aa1pUrxzumin3Ui27",
+        "alt" : "Morbo"
+    }
+    
+]
