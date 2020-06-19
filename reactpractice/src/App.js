@@ -45,9 +45,47 @@ class App extends Component {
                 }
         }
     }
+
+    //Map over componenet using this.state and render all components
     render() {
 
-        return 
+        return (
+
+            // Header
+            <div className="App">
+                <header className="appHeader">
+                    <h1 className="App-Title">Futurama Memory Game</h1>
+                    <p className="App-Intro">Try not to click the same image TWICE!</p>
+                </header>
+
+            {/* Score Section */}
+            <Score 
+                total = {this.state.score}
+                goal = {12}
+                status = {this.state.status}
+            />
+
+            {/* //Wrapper  */}
+            <Wrapper>
+                {this.state.futurama.map(character => {
+
+                    //Render Image
+                    <Card 
+                        shuffleCard = {this.shuffleCard}
+                        id = {character.id}
+                        key = {character.id}
+                        image = {character.image}
+                    />
+                })}
+            </Wrapper>
+
+            {/* Footer */}
+            <footer>
+                <p>Futurama Memory Game designed by <strong><a href="https://github.com/ngavu2712/Memory-Game">Anna Vu</a></strong></p>
+            </footer>
+
+            </div>
+        )
     }
 
 }
