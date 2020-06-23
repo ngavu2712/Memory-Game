@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Card from "./components/Card";
-import Score from "./components/Score";
-import Wrapper from "./components/Wrapper";
+import Card from "./components/Card/card";
+import Score from "./components/Score/score";
+import Wrapper from "./components/Wrapper/wrapper";
 import futurama from "./image.json";
 import "./App.css";
 
@@ -10,40 +10,47 @@ class App extends Component {
     // Initial state before mount
     state = {
         status: "",
-        goal: 12,
+        topScore: 0,
         score: 0,
         futurama,
-        clickedCard : []
+        // clickedCard : []
     };
 
     // function to shuffle the card when user clicks the card
     shuffleCard = id => {
-
-        let clickedCard = this.state.clickedCard;
-
-        // If users click a card twice, they lose
-        if(clickedCard.include(id)){
-            this.setState( {clickedCard : [], score: 0, status: "Game Over! Click to Play Again!"})
-            return ;
-        } else {
-            clickedCard.push(id)
         
+        
+        // let clickedCard = this.state.clickedCard;
 
-            // If the user do not repeat any card, they win
-            if(clickedCard === 12){
-                this.setState( {score: 12, status : "You Won! You must be a fan of Futurama!", clickedCard : []})
-                return;
-            }
-
-            //
-            this.setState({futurama, clickedCard, score : clickedCard.length, status: " "})
-
-                for (let i= futurama.length -1; i > 0; i--) 
-                {
-                    let j = Math.floor(Math.random() * (i+1))
-                    [futurama[i], futurama[j]] = [futurama[j], futurama[i]]
+        let newFuturama = this.state.futurama.map((card) => {
+              // If users click a card twice, they lose
+        if(card.id.toString().includes(id)){
+                if(card.clicked){ // if  click = true (means been clicked twice)
+                     this.setState({score: 0}) // penalize user
+                }else { // else click = undefined
+                    this.setState({score: this.state.score+1})
+                    if(this.state.score >= this.state.topScore){
+                        this.setState({topScore : this.state.topScore +1 })
+                    }
+                    card.clicked = true;
                 }
+          } 
+        
+        
+        return card
+        })
+
+        if(this.state.score === 0){ // when score = 0, return the array with 
+            newFuturama = newFuturama.map(card => {
+                card.clicked = undefined;
+                return card;
+            })
         }
+
+        newFuturama = newFuturama.sort(() => {
+           return Math.random()- 0.5 // make the card shuffle
+        })
+          this.setState({futurama : newFuturama}) // reset the game, create new array
     }
 
     //Map over componenet using this.state and render all components
@@ -60,23 +67,31 @@ class App extends Component {
 
             {/* Score Section */}
             <Score 
-                total = {this.state.score}
-                goal = {12}
+               score = {this.state.score}
+                topScore = {this.state.topScore}
                 status = {this.state.status}
             />
 
             {/* //Wrapper  */}
             <Wrapper>
+                {console.log(this.state.futurama)}
+                <div className = "row">
                 {this.state.futurama.map(character => {
-
+                    
+                    return (
                     //Render Image
-                    <Card 
-                        shuffleCard = {this.shuffleCard}
-                        id = {character.id}
-                        key = {character.id}
-                        image = {character.image}
-                    />
+                    <div className = "col-sm-3">
+                        <Card 
+                            shuffleCard = {this.shuffleCard}
+                            id = {character.id}
+                            key = {character.id}
+                            image = {character.image}
+                        />
+                    </div>
+                    ) 
                 })}
+                </div>
+              
             </Wrapper>
 
             {/* Footer */}

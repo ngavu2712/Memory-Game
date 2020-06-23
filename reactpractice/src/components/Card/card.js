@@ -7,11 +7,14 @@ const Card = props => {
     //JSX
     return (
         <div className="card img-container hover">
-    
-            <img className="shuffleCard" id={props.id} src={props.image} alt={props.alt}/>
+            {console.log(props.image)}
+            <img className="shuffleCard" onClick={() => {
+                
+                props.shuffleCard(props.id)
+            
+            }} id={props.id} src={props.image} alt={props.alt}/>
     
         </div>
     )
 }
-
 export default Card;
