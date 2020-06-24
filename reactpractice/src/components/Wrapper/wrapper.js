@@ -6,7 +6,7 @@ const Wrapper = props => {
 
     //JSX
     return(
-        <div classNamw="wrapper">
+        <div className="wrapper">
             {props.children}
         </div>
     )

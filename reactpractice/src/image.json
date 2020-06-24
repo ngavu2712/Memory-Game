@@ -6,30 +6,31 @@
     },
     {
         "id": 2,
-        "image" : "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Philip_Fry.png/220px-Philip_Fry.png",
+        "image" : "https://i.pinimg.com/originals/13/56/cc/1356cc54c06d8802c1186214a727672b.png",
         "alt" : "Fry"
     },
     {
         "id": 3,
-        "image" : "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Dr_John_Zoidberg.png/200px-Dr_John_Zoidberg.png",
+        "image" : "https://gamepedia.cursecdn.com/futuramaworldsoftomorrow_gamepedia_en/1/17/Zoidberg.png",
         "alt" : "Dr.Zoiberg"
-        
     },
     {
         "id": 4,
         "image" : "https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/FuturamaProfessorFarnsworth.png/175px-FuturamaProfessorFarnsworth.png",
         "alt" : "Professor Farnsworth"
     },
+    
     {
         "id": 5,
-        "image" : "https://upload.wikimedia.org/wikipedia/en/d/d4/Turanga_Leela.png",
+        "image" : "https://cdn.pixabay.com/photo/2018/10/19/06/21/turanga-leela-3757930_960_720.png",
         "alt" : "Leela"
     },
     {
         "id": 6,
-        "image" : "https://ya-webdesign.com/images250_/futurama-transparent-one-eyed-girl-4.png",
+        "image" : "https://vignette.wikia.nocookie.net/en.futurama/images/9/94/AmyWong.png/revision/latest/top-crop/width/360/height/360?cb=20170123190854",
         "alt" : "Amy Wong"
     },
+    
     {
         "id": 7,
         "image" : "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Bender_Rodriguez.png/220px-Bender_Rodriguez.png",
@@ -42,7 +43,7 @@
     },
     {
         "id": 9,
-        "image" : "https://gamepedia.cursecdn.com/futuramaworldsoftomorrow_gamepedia_en/f/ff/Character_Hermes.png",
+        "image" : "https://gamepedia.cursecdn.com/futuramaworldsoftomorrow_gamepedia_en/9/9a/Bobsled_Hermes.png",
         "alt" : "Hermes"
     },
     {

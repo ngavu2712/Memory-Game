@@ -10,10 +10,9 @@ class App extends Component {
     // Initial state before mount
     state = {
         status: "",
-        topScore: 0,
+        topScore: 0, // the highest score from last game
         score: 0,
-        futurama,
-        // clickedCard : []
+        futurama
     };
 
     // function to shuffle the card when user clicks the card
@@ -22,25 +21,35 @@ class App extends Component {
         
         // let clickedCard = this.state.clickedCard;
 
-        let newFuturama = this.state.futurama.map((card) => {
-              // If users click a card twice, they lose
-        if(card.id.toString().includes(id)){
+        let newFuturama = this.state.futurama.map( card => {
+
+              // Since include() is string method, change card.id to string
+              
+            if(card.id.toString().includes(id)){
                 if(card.clicked){ // if  click = true (means been clicked twice)
-                     this.setState({score: 0}) // penalize user
-                }else { // else click = undefined
-                    this.setState({score: this.state.score+1})
-                    if(this.state.score >= this.state.topScore){
-                        this.setState({topScore : this.state.topScore +1 })
-                    }
-                    card.clicked = true;
+
+                     this.setState({score: 0}) // penalize user by setting their score back to 0
+
+                }else { // else click = undefined (user hasn't clicked the card)
+
+                    this.setState({score: this.state.score+1}) // update the score by adding 1 point to it
+
+                        if(this.state.score >= this.state.topScore){ //increase topscore by 1 when the score increase by 1
+
+                            this.setState({topScore : this.state.topScore +1 })
+                        }
+
+                    card.clicked = true; // turn the click property to true as a proof that user has clicked the card
                 }
-          } 
-        
-        
+            }
+
+        // Have to return card
         return card
+
         })
 
-        if(this.state.score === 0){ // when score = 0, return the array with 
+
+        if(this.state.score === 0){ // when score = 0, return the array with new clicked props as undefined (mean user hasn't clicked card)
             newFuturama = newFuturama.map(card => {
                 card.clicked = undefined;
                 return card;
@@ -58,19 +67,35 @@ class App extends Component {
 
         return (
 
-            // Header
             <div className="App">
+
+          
+           <nav className = "nav">
+               <ul className ="nav justify-content-center">
+                   <li className ="nav-item">
+                        <a className="nav-link active">
+                        <Score 
+                            score = {this.state.score} 
+                            topScore = {this.state.topScore}
+                            // status = {this.state.status}
+                        />
+                        </a>
+                   </li>
+               </ul>
+           </nav>
+             {/* Header */}
                 <header className="appHeader">
-                    <h1 className="App-Title">Futurama Memory Game</h1>
-                    <p className="App-Intro">Try not to click the same image TWICE!</p>
+
+                    <h1 className="App-Title">FUTURAMA clicky game
+                        <p className="rule">Try not to click the same card TWICE!</p>
+                    </h1>
+                      
+                    
                 </header>
 
             {/* Score Section */}
-            <Score 
-               score = {this.state.score}
-                topScore = {this.state.topScore}
-                status = {this.state.status}
-            />
+            
+
 
             {/* //Wrapper  */}
             <Wrapper>
@@ -80,7 +105,7 @@ class App extends Component {
                     
                     return (
                     //Render Image
-                    <div className = "col-sm-3">
+                    <div className = "col-sm-2" style={{"margin-bottom": "15px"}}>
                         <Card 
                             shuffleCard = {this.shuffleCard}
                             id = {character.id}
@@ -99,7 +124,7 @@ class App extends Component {
                 <p>Futurama Memory Game designed by <strong><a href="https://github.com/ngavu2712/Memory-Game">Anna Vu</a></strong></p>
             </footer>
 
-            </div>
+        </div>
         )
     }
 

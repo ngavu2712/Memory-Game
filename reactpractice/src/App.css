@@ -1,0 +1,48 @@
+div.App{
+    text-align: center;
+    /* background-image: url("../src/img/futurama.jpg"); */
+    background-image: url("../src/img/space.jpg");
+    font-family: 'Questrial', sans-serif;
+    color: white;
+}
+
+.App-Title{
+    font-family: 'Holtwood One SC', serif;
+    font-size: 50px;
+    color:#FFFF00; 
+    background-image: url("../src/img/space.jpg");
+    margin-bottom: 50px;
+    padding: 80px;
+    
+}
+
+footer {
+    height: 50px;
+    background-color: #02c3ce;
+    margin-top: 100px;
+    background-color:#02c3ce;
+    height: 100px;
+    padding-top: 40px;
+}
+
+/* h3{
+    background-image: url("../src/img/space.jpg");
+} */
+
+
+
+.rule{
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.nav{
+    width: 100%;
+    position: fixed;
+    background-color:#02c3ce;
+    z-index: 99;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+    height: 50px;
+    /* font-size: calc(10px + 14 * (100vw - 320px)/ 800);  */
+}

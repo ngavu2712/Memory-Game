@@ -6,8 +6,10 @@ const Card = props => {
 
     //JSX
     return (
+        
         <div className="card img-container hover">
             {console.log(props.image)}
+
             <img className="shuffleCard" onClick={() => {
                 
                 props.shuffleCard(props.id)
