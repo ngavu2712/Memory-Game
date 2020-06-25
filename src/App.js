@@ -12,9 +12,12 @@ class App extends Component {
         status: "",
         topScore: 0, // the highest score from last game
         score: 0,
-        futurama
+        futurama,
+
     };
 
+    
+    
     // function to shuffle the card when user clicks the card
     shuffleCard = id => {
         
@@ -29,7 +32,7 @@ class App extends Component {
                 if(card.clicked){ // if  click = true (means been clicked twice)
 
                      this.setState({score: 0}) // penalize user by setting their score back to 0
-
+                
                 }else { // else click = undefined (user hasn't clicked the card)
 
                     this.setState({score: this.state.score+1}) // update the score by adding 1 point to it
@@ -77,6 +80,7 @@ class App extends Component {
                         <Score 
                             score = {this.state.score} 
                             topScore = {this.state.topScore}
+                            
                             // status = {this.state.status}
                         />
                         </a>

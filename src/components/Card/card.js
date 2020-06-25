@@ -8,7 +8,7 @@ const Card = props => {
     return (
         
         <div className="card img-container hover">
-            {console.log(props.image)}
+            {/* {console.log(props.image)} */}
 
             <img className="shuffleCard" onClick={() => {
                 
